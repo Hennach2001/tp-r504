@@ -1,13 +1,5 @@
 def puissance(a, b):
+    if not (type(a) is int and type(b) is int):
+        raise TypeError("Only integers are allowed")
     return a ** b
-import fonctions as f
-
-while True:
-    try:
-        a = int(input("Entrez le premier nombre entier (CTRL-C pour quitter) : "))
-        b = int(input("Entrez le deuxième nombre entier : "))
-        res = f.puissance(a, b)
-        print(f"{a} élevé à la puissance {b} est {res}")
-    except ValueError:
-        print("Veuillez entrer des nombres entiers valides.")
 
