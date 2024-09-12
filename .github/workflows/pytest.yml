@@ -14,4 +14,4 @@ jobs:
       - name: Install dependencies
         run: pip3 install pytest
       - name: Run tests
-        run: python3 -m pytest test.py
+        run: python3 -m pytest TP1/test.py
