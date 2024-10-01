@@ -22,7 +22,7 @@ def index():
     query = "SELECT * FROM myTable"
     cursor.execute(query)
     data = cursor.fetchall()
-    print("coucou")
+    
 
     
     return render_template('index.html', data=data)
