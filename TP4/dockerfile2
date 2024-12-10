@@ -11,7 +11,7 @@ RUN pip3 install flask-mysqldb mysql-connector-python
 RUN mkdir -p /srv/templates
 
 COPY index.html /srv/templates/
-
+COPY app_1.py /srv/
 
 WORKDIR /srv
 

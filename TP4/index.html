@@ -1,10 +1,11 @@
 <html>
 <head>
-<title>Demo sql query in table</title>
+<title>Demo SQL Query in Table</title>
 </head>
 <body>
 
-Table:
+<!-- Affichage du tableau -->
+<h2>Table:</h2>
 <table>
 {% for row in data %}
 <tr>
@@ -14,6 +15,33 @@ Table:
 </tr>
 {% endfor %}
 </table>
+
+<!-- Formulaire de saisie d'un nouvel utilisateur -->
+<h2>Créer un nouveau compte</h2>
+<form action="/newuser/" method="POST">
+    <label for="username">Identifiant :</label>
+    <input type="text" id="username" name="username" value="{{ username or '' }}">
+    <button type="submit">Envoyer</button>
+</form>
+
+<!-- Affichage des erreurs ou du succès -->
+{% if errors %}
+    <div style="color: red;">
+        <h3>Erreurs de validation :</h3>
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if success %}
+    <div style="color: green;">
+        <h3>Succès : L'identifiant {{ username }} est valide !</h3>
+    </div>
+{% endif %}
+
 </body>
 </html>
 
